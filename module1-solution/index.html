@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model="list">
+             <small class="form-text text-muted">Empty item, i.e. <code>item1, ,item2</code>, is not considered as an item towards to the count. Also error message will be shown if only input empty items i.e. <code>,,</code>.</small>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="processInput()">Check If Too Much</button>
+         </div>
+         <div class="form-group message text-{{status}}">
+           {{message}}
+         </div>
+   </div>
+
+</body>
+</html>
