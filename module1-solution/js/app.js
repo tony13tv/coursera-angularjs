@@ -12,7 +12,7 @@
 
     $scope.processInput = function() {
       if($scope.list == '') {
-        $scope.status = 'danger';
+        $scope.status = 'error';
         $scope.message = 'Please enter data first';
         return;
       }
@@ -23,7 +23,7 @@
       }else if(splitted.length > 3){
         $scope.message = 'Too much!';
       } else {
-        $scope.status = 'danger';
+        $scope.status = 'error';
         $scope.message = 'Please enter data first';
       }
     }
